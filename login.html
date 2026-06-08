@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login // InvenTrack</title>
+  <link rel="stylesheet" href="login.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="login-container">
+    <div class="login-box">
+      
+      <div class="form-header">
+        <div class="brand">
+          <i class="fa-solid fa-boxes-stacked brand-icon"></i>
+          <h2>InvenTrack</h2>
+        </div>
+        <h3>Selamat Datang</h3>
+        <p>Silakan masuk untuk mengelola inventaris gudang</p>
+      </div>
+      
+      <form id="login-form">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <div class="input-wrapper">
+            <i class="fa-solid fa-user input-icon"></i>
+            <input type="text" id="username" placeholder="Masukkan username" required>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="input-wrapper">
+            <i class="fa-solid fa-lock input-icon"></i>
+            <input type="password" id="password" placeholder="••••••••" required>
+          </div>
+        </div>
+        
+        <button type="submit" class="btn-login" id="btn-submit-login">
+          Masuk ke Dashboard <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </form>
+      
+      <div id="status"></div>
+      
+    </div>
+  </div>
+
+  <script type="module">
+    // Mengimpor fungsi login dari main.js Anda
+    import { login } from './main.js'
+    
+    const form = document.getElementById('login-form')
+    
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault()
+      
+      // Menjalankan fungsi login bawaan dari main.js Anda
+      await login()
+    })
+  </script>
+</body>
+</html>
